@@ -18,12 +18,8 @@ const data: ISiteMetadataResult = {
   siteTitle: 'Tongji Running Page',
   siteUrl: 'https://run.yantares.cn',
   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
-  description: 'TJ体锻记录炫酷版',
+  description: 'running record',
   navLinks: [
-    {
-      name: 'Summary',
-      url: `${getBasePath()}/summary`,
-    },
     {
       name: 'Blog',
       url: 'https://yantares.cn',
