@@ -6,7 +6,7 @@ on:
     - cron: '0 0 * * *'
   push:
     branches:
-      - master
+      - gh-pages
     paths:
       - run_page/nike_sync.py
       - run_page/nike_to_strava_sync.py
@@ -55,7 +55,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: Y-Antares/running_page
-          ref: master
+          ref: gh=pages
           fetch-depth: 0
           persist-credentials: true
 

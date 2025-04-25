@@ -49,7 +49,7 @@ jobs:
         with:
           # if your default branches is not master, please change it here
           repository: Y-Antares/running_page
-          ref: master
+          ref: gh-pages
           fetch-depth: 0
           persist-credentials: false 
 
