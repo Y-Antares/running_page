@@ -26,7 +26,7 @@ on:
 env:
   # please change to your own config.
   RUN_TYPE: keep # 修改为你需要的同步类型(keep/strava等)
-  ATHLETE: Yantares # 修改为你的用户名
+  ATHLETE: Y-Antares # 修改为你的用户名
   TITLE: Yantares Running # 修改为你的标题
   MIN_GRID_DISTANCE: 10 # change min distance here
   TITLE_GRID: Over 10km Runs # also here
