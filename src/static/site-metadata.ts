@@ -15,10 +15,10 @@ const getBasePath = () => {
 };
 
 const data: ISiteMetadataResult = {
-  siteTitle: 'Tongji Running Page',
+  siteTitle: 'Yantares Running Page',
   siteUrl: 'run.yantares.cn',
   logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTtc69JxHNcmN1ETpMUX4dozAgAN6iPjWalQ&usqp=CAU',
-  description: 'running record',
+  description: 'Running Record',
   navLinks: [
     {
       name: 'Blog',

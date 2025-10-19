@@ -7,6 +7,7 @@ const MAPBOX_TOKEN =
 const MUNICIPALITY_CITIES_ARR = [
   '北京市',
   '上海市',
+  '成都市',
   '天津市',
   '重庆市',
   '香港特别行政区',
@@ -42,9 +43,6 @@ const ROAD_LABEL_DISPLAY = true;
 // updated on 2024/11/17: privacy mode is set to true by default
 //set to `true` if you want to display only the routes without showing the map.
 const PRIVACY_MODE = true;
-// update for now 2024/11/17 the lights on default is false
-const PRIVACY_MODE = false;
-// updated on 2024/11/17: lights are turned off by default
 //set to `false` if you want to make light off as default, only effect when `PRIVACY_MODE` = false
 const LIGHTS_ON = false;
 //set to `true` if you want to show the 'Elevation Gain' column
@@ -228,7 +226,7 @@ export const SWIMMING_COLOR = 'rgb(255,51,51)';
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = 'mapbox';
+export const MAP_TILE_VENDOR = 'maptiler';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
 export const MAP_TILE_STYLE_LIGHT = 'light-v10';
@@ -237,7 +235,7 @@ export const MAP_TILE_STYLE_DARK = 'dark-v10';
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
 // stadiamaps: 8a769c5a-9125-4936-bdcf-a6b90cb5d0a4 | sign up at https://client.stadiamaps.com/signup/
-export const MAP_TILE_ACCESS_TOKEN = 'Gt5R0jT8tuIYxW6sNrAg';
+export const MAP_TILE_ACCESS_TOKEN = 'UX7VGISeiWiXbypjfV8C';
 
 export const MAP_TILE_STYLES = {
   maptiler: {
