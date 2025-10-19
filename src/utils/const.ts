@@ -42,7 +42,7 @@ const MAP_HEIGHT = window.innerWidth <= 768 ? 250 : 600;
 const ROAD_LABEL_DISPLAY = true;
 // updated on 2024/11/17: privacy mode is set to true by default
 //set to `true` if you want to display only the routes without showing the map.
-const PRIVACY_MODE = true;
+const PRIVACY_MODE = false;
 //set to `false` if you want to make light off as default, only effect when `PRIVACY_MODE` = false
 const LIGHTS_ON = false;
 //set to `true` if you want to show the 'Elevation Gain' column
@@ -229,8 +229,8 @@ export const SWIMMING_COLOR = 'rgb(255,51,51)';
 export const MAP_TILE_VENDOR = 'maptiler';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE_LIGHT = 'light-v10';
-export const MAP_TILE_STYLE_DARK = 'dark-v10';
+export const MAP_TILE_STYLE_LIGHT = 'streets-light';
+export const MAP_TILE_STYLE_DARK = 'bright-dark';
 
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
