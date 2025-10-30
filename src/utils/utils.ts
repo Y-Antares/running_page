@@ -292,7 +292,8 @@ const geoJsonForMap = async (): Promise<FeatureCollection<RPGeometry>> => {
 const getActivitySport = (act: Activity): string => {
   const type = act.type.toLowerCase(); // <-- 1. 转换为小写
 
-  if (type === 'run') { // <-- 2. 检查 'run'
+  if (type === 'run') {
+    // <-- 2. 检查 'run'
     if (act.subtype === 'generic') {
       const runDistance = act.distance / 1000;
       if (runDistance > 20 && runDistance < 40) {
@@ -305,15 +306,19 @@ const getActivitySport = (act: Activity): string => {
     else if (act.subtype === 'treadmill')
       return ACTIVITY_TYPES.RUN_TREADMILL_TITLE;
     else return ACTIVITY_TYPES.RUN_GENERIC_TITLE;
-  } else if (type === 'hike' || type === 'hiking') { // <-- 3. 检查 'hike' 或 'hiking'
+  } else if (type === 'hike' || type === 'hiking') {
+    // <-- 3. 检查 'hike' 或 'hiking'
     return ACTIVITY_TYPES.HIKING_TITLE;
-  } else if (type === 'ride' || type === 'cycling') { // <-- 4. 检查 'ride' 或 'cycling'
+  } else if (type === 'ride' || type === 'cycling') {
+    // <-- 4. 检查 'ride' 或 'cycling'
     return ACTIVITY_TYPES.CYCLING_TITLE;
-  } else if (type === 'walk' || type === 'walking') { // <-- 5. 检查 'walk' 或 'walking'
+  } else if (type === 'walk' || type === 'walking') {
+    // <-- 5. 检查 'walk' 或 'walking'
     return ACTIVITY_TYPES.WALKING_TITLE;
   }
   // if act.type contains 'skiing'
-  else if (type.includes('skiing')) { // <-- 6. 检查 'skiing'
+  else if (type.includes('skiing')) {
+    // <-- 6. 检查 'skiing'
     return ACTIVITY_TYPES.SKIING_TITLE;
   }
   return '';

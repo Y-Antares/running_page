@@ -81,7 +81,9 @@ def get_to_download_runs_ids(session, headers, sport_type):
 
             for i in run_logs:
                 logs = [j["stats"] for j in i["logs"]]
-                result.extend(k["id"] for k in logs if k and not k.get("isDoubtful", False))
+                result.extend(
+                    k["id"] for k in logs if k and not k.get("isDoubtful", False)
+                )
             last_date = r.json()["data"]["lastTimestamp"]
             since_time = datetime.fromtimestamp(last_date / 1000, tz=timezone.utc)
             print(f"pares keep ids data since {since_time}")
@@ -118,7 +120,9 @@ def parse_raw_data_to_nametuple(
     # --- 在这里添加新代码 ---
     data_type = run_data.get("dataType")
     if data_type not in KEEP2STRAVA or data_type not in KEEP2TCX:
-        print(f"Skipping activity {run_data.get('id')} with unmapped dataType: {data_type}")
+        print(
+            f"Skipping activity {run_data.get('id')} with unmapped dataType: {data_type}"
+        )
         return None
     # --- 添加结束 ---
     run_points_data = []
