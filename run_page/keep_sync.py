@@ -261,7 +261,9 @@ def get_all_keep_tracks(
 
                 # 仍然保留 None 检查
                 if run_data is None:
-                    print(f"Failed to get data for keep id {run} (type: {api}), skipping.")
+                    print(
+                        f"Failed to get data for keep id {run} (type: {api}), skipping."
+                    )
                     continue
                 # --- 修改结束 ---
 
