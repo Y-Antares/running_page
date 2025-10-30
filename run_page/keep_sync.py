@@ -81,7 +81,7 @@ def get_to_download_runs_ids(session, headers, sport_type):
 
             for i in run_logs:
                 logs = [j["stats"] for j in i["logs"]]
-                result.extend(k["id"] for k in logs if not k["isDoubtful"])
+                result.extend(k["id"] for k in logs if k and not k.get("isDoubtful", False))
             last_date = r.json()["data"]["lastTimestamp"]
             since_time = datetime.fromtimestamp(last_date / 1000, tz=timezone.utc)
             print(f"pares keep ids data since {since_time}")
@@ -115,6 +115,12 @@ def parse_raw_data_to_nametuple(
     run_data, old_gpx_ids, old_tcx_ids, with_gpx=False, with_tcx=False
 ):
     run_data = run_data["data"]
+    # --- 在这里添加新代码 ---
+    data_type = run_data.get("dataType")
+    if data_type not in KEEP2STRAVA or data_type not in KEEP2TCX:
+        print(f"Skipping activity {run_data.get('id')} with unmapped dataType: {data_type}")
+        return None
+    # --- 添加结束 ---
     run_points_data = []
 
     # 5898009e387e28303988f3b7_9223370441312156007_rn middle
@@ -249,7 +255,8 @@ def get_all_keep_tracks(
                 track = parse_raw_data_to_nametuple(
                     run_data, old_gpx_ids, old_tcx_ids, with_gpx, with_tcx
                 )
-                tracks.append(track)
+                if track:  # 只有在 track 不是 None 时才添加
+                    tracks.append(track)
             except Exception as e:
                 print(f"Something wrong paring keep id {run}: " + str(e))
     return tracks
