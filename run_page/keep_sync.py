@@ -255,11 +255,20 @@ def get_all_keep_tracks(
         for run in runs:
             print(f"parsing keep id {run}")
             try:
+                # --- 修改开始 ---
+                # 直接使用 'api' (即 'walking')，不再映射
                 run_data = get_single_run_data(s, headers, run, api)
+
+                # 仍然保留 None 检查
+                if run_data is None:
+                    print(f"Failed to get data for keep id {run} (type: {api}), skipping.")
+                    continue
+                # --- 修改结束 ---
+
                 track = parse_raw_data_to_nametuple(
                     run_data, old_gpx_ids, old_tcx_ids, with_gpx, with_tcx
                 )
-                if track:  # 只有在 track 不是 None 时才添加
+                if track:
                     tracks.append(track)
             except Exception as e:
                 print(f"Something wrong paring keep id {run}: " + str(e))
