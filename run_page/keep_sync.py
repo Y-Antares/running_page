@@ -27,14 +27,14 @@ import xml.etree.ElementTree as ET
 
 KEEP_SPORT_TYPES = ["running", "hiking", "cycling"]
 KEEP2STRAVA = {
-    "outdoorWalking": "Walk",
+    #"outdoorWalking": "Walk",
     "outdoorRunning": "Run",
     "outdoorCycling": "Ride",
     "indoorRunning": "VirtualRun",
     "mountaineering": "Hiking",
 }
 KEEP2TCX = {
-    "outdoorWalking": "Walking",
+    #"outdoorWalking": "Walking",
     "outdoorRunning": "Running",
     "outdoorCycling": "Biking",
     "indoorRunning": "Running",
